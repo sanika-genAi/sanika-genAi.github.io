@@ -1,38 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sanika | Gen AI Artist</title>
+  <title>Sanika Porwal | Luxury AI Visual Artist</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
-    body {
+    * {
       margin: 0;
-      background: #0d0d0d;
-      color: white;
-      font-family: Arial, sans-serif;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: radial-gradient(circle at center, #111217 0%, #050507 70%);
+      color: #f5f5f5;
+      font-family: 'Inter', sans-serif;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
       text-align: center;
+      overflow: hidden;
+    }
+
+    .hero {
+      animation: fadeIn 2s ease forwards;
     }
 
     h1 {
-      font-size: 60px;
-      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 72px;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, #ffffff, #c6a75e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     p {
-      max-width: 600px;
+      margin-top: 25px;
       font-size: 18px;
+      font-weight: 300;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
       opacity: 0.8;
+      line-height: 1.6;
+    }
+
+    .gold-line {
+      width: 120px;
+      height: 2px;
+      background: #c6a75e;
+      margin: 30px auto;
+      box-shadow: 0 0 15px #c6a75e;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
+
 <body>
-  <div>
+
+  <div class="hero">
     <h1>Sanika Porwal</h1>
+    <div class="gold-line"></div>
     <p>
-      Generative AI Artist crafting cinematic, story-driven visuals inspired by Indian heritage, mythology, and luxury aesthetics.
+      Generative AI Artist crafting luxury mythological visuals, cinematic storytelling,
+      and premium AI experiences inspired by Indian heritage and divine aesthetics.
     </p>
   </div>
+
 </body>
 </html>
