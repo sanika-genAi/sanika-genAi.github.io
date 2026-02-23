@@ -1,0 +1,62 @@
+index.html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sanika | Gen AI Artist</title>
+  <style>
+    body {
+      margin: 0;
+      background: #0d0d0d;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 60px;
+      letter-spacing: 3px;
+      margin: 0;
+    }
+
+    p {
+      max-width: 600px;
+      font-size: 18px;
+      opacity: 0.8;
+      margin-top: 20px;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 12px 30px;
+      background: white;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+    }
+
+    .btn:hover {
+      background: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <h1>Sanika Porwal</h1>
+    <p>
+      Generative AI Artist crafting cinematic, story-driven visuals inspired by Indian heritage, mythology, and luxury aesthetics.
+    </p>
+    <a class="btn" href="#">View My Work</a>
+  </div>
+
+</body>
+</html>
