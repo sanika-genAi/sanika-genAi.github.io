@@ -1,170 +1,95 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Sanika Porwal | AI Cinematic Visual Director</title>
+<style>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+/* BASE */
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #050507;
+  font-family: 'Inter', sans-serif;
+}
 
-    body {
-      height: 100vh;
-      overflow: hidden;
-      font-family: 'Inter', sans-serif;
-      color: #f5f5f5;
-      background: #050507;
-    }
+/* MULTI LAYER BACKGROUND */
 
-    /* CINEMATIC BACKGROUND */
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 
-    .bg {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
+/* LAYER 1 — SOFT GOLD LIGHT */
 
-    /* GOLD LIGHT BLOBS */
+.bg::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle at 30% 40%, rgba(198,167,94,0.25), transparent 60%),
+              radial-gradient(circle at 70% 60%, rgba(198,167,94,0.15), transparent 70%);
+  filter: blur(120px);
+  animation: slowMove 18s infinite alternate ease-in-out;
+}
 
-    .blob {
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(198,167,94,0.25), transparent 70%);
-      filter: blur(120px);
-      animation: move 12s infinite alternate ease-in-out;
-    }
+/* LAYER 2 — DARK DEPTH GRADIENT */
 
-    .blob:nth-child(1) {
-      top: 10%;
-      left: 20%;
-    }
+.bg::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(20,20,25,0.4), #050507 80%);
+}
 
-    .blob:nth-child(2) {
-      bottom: 10%;
-      right: 15%;
-      animation-delay: 3s;
-    }
+/* LAYER 3 — MOVING LIGHT BEAMS */
 
-    .blob:nth-child(3) {
-      top: 50%;
-      left: 60%;
-      animation-delay: 6s;
-    }
+.light {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(198,167,94,0.12), transparent 70%);
+  filter: blur(80px);
+  animation: float 12s infinite alternate ease-in-out;
+}
 
-    @keyframes move {
-      from {
-        transform: translate(0, 0);
-      }
-      to {
-        transform: translate(80px, -60px);
-      }
-    }
+.light:nth-child(1) {
+  top: 10%;
+  left: 20%;
+}
 
-    /* HERITAGE LINES (SUBTLE ARCH FEEL) */
+.light:nth-child(2) {
+  bottom: 10%;
+  right: 20%;
+  animation-delay: 3s;
+}
 
-    .lines {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-image: radial-gradient(circle at center, transparent 60%, rgba(198,167,94,0.05));
-      opacity: 0.3;
-    }
+.light:nth-child(3) {
+  top: 50%;
+  left: 60%;
+  animation-delay: 6s;
+}
 
-    /* CONTENT */
+/* LAYER 4 — FILM GRAIN TEXTURE */
 
-    .content {
-      position: relative;
-      z-index: 2;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-      animation: fadeIn 2s ease forwards;
-    }
+.grain {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+}
 
-    h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 90px;
-      font-weight: 600;
-      letter-spacing: 2px;
-    }
+/* ANIMATIONS */
 
-    .accent {
-      color: #c6a75e;
-    }
+@keyframes float {
+  from { transform: translate(0,0); }
+  to { transform: translate(80px,-60px); }
+}
 
-    .divider {
-      width: 150px;
-      height: 2px;
-      background: #c6a75e;
-      margin: 30px auto;
-      box-shadow: 0 0 20px rgba(198,167,94,0.6);
-    }
+@keyframes slowMove {
+  from { transform: translate(0,0); }
+  to { transform: translate(-60px,40px); }
+}
 
-    p {
-      font-size: 18px;
-      max-width: 650px;
-      opacity: 0.85;
-      line-height: 1.7;
-    }
-
-    .cta {
-      margin-top: 50px;
-      font-size: 13px;
-      letter-spacing: 3px;
-      color: #c6a75e;
-      text-decoration: none;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-  </style>
-</head>
-
-<body>
-
-  <div class="bg">
-    <div class="blob"></div>
-    <div class="blob"></div>
-    <div class="blob"></div>
-    <div class="lines"></div>
-  </div>
-
-  <div class="content">
-
-    <h1>
-      Sanika <span class="accent">Porwal</span>
-    </h1>
-
-    <div class="divider"></div>
-
-    <p>
-      AI Cinematic Visual Director crafting luxury visual campaigns,
-      immersive storytelling, and premium AI experiences inspired by
-      modern creativity and Indian heritage.
-    </p>
-
-    <a href="#" class="cta">ENTER PORTFOLIO ↓</a>
-
-  </div>
-
-</body>
-</html>
+</style>
