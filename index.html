@@ -1,95 +1,113 @@
 <style>
 
-/* BASE */
+/* MAIN BG */
 
 body {
   margin: 0;
   overflow: hidden;
   background: #050507;
-  font-family: 'Inter', sans-serif;
 }
 
-/* MULTI LAYER BACKGROUND */
+/* SCENE CONTAINER */
 
-.bg {
+.scene {
   position: absolute;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
-/* LAYER 1 — SOFT GOLD LIGHT */
+/* LAYER 1 — GRADIENT SKY */
 
-.bg::before {
-  content: "";
-  position: absolute;
-  width: 120%;
-  height: 120%;
-  background: radial-gradient(circle at 30% 40%, rgba(198,167,94,0.25), transparent 60%),
-              radial-gradient(circle at 70% 60%, rgba(198,167,94,0.15), transparent 70%);
-  filter: blur(120px);
-  animation: slowMove 18s infinite alternate ease-in-out;
-}
-
-/* LAYER 2 — DARK DEPTH GRADIENT */
-
-.bg::after {
-  content: "";
+.sky {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, rgba(20,20,25,0.4), #050507 80%);
+  background: linear-gradient(
+    120deg,
+    #050507 30%,
+    #1a1408 60%,
+    #2a1d0a 100%
+  );
 }
 
-/* LAYER 3 — MOVING LIGHT BEAMS */
+/* LAYER 2 — LIGHT GLOW */
 
-.light {
+.glow {
   position: absolute;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(198,167,94,0.12), transparent 70%);
-  filter: blur(80px);
-  animation: float 12s infinite alternate ease-in-out;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(198,167,94,0.3), transparent 70%);
+  filter: blur(120px);
+  animation: float 20s infinite alternate ease-in-out;
 }
 
-.light:nth-child(1) {
+.glow:nth-child(2) {
   top: 10%;
   left: 20%;
 }
 
-.light:nth-child(2) {
+.glow:nth-child(3) {
   bottom: 10%;
   right: 20%;
-  animation-delay: 3s;
+  animation-delay: 5s;
 }
 
-.light:nth-child(3) {
-  top: 50%;
-  left: 60%;
-  animation-delay: 6s;
-}
+/* LAYER 3 — HERITAGE SHAPES */
 
-/* LAYER 4 — FILM GRAIN TEXTURE */
-
-.grain {
+.arch {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-  opacity: 0.04;
-  mix-blend-mode: overlay;
+  width: 300px;
+  height: 500px;
+  border: 2px solid rgba(198,167,94,0.1);
+  border-radius: 200px 200px 0 0;
+  bottom: -100px;
+  opacity: 0.2;
 }
 
-/* ANIMATIONS */
+.arch:nth-child(4) {
+  left: 20%;
+}
+
+.arch:nth-child(5) {
+  left: 60%;
+}
+
+/* LAYER 4 — PARTICLES */
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #c6a75e;
+  opacity: 0.6;
+  animation: rise 10s infinite linear;
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-10vh);
+    opacity: 1;
+  }
+}
+
+/* RANDOM POSITIONS */
+
+.particle:nth-child(6) { left: 10%; animation-delay: 1s; }
+.particle:nth-child(7) { left: 30%; animation-delay: 3s; }
+.particle:nth-child(8) { left: 50%; animation-delay: 5s; }
+.particle:nth-child(9) { left: 70%; animation-delay: 2s; }
+.particle:nth-child(10){ left: 90%; animation-delay: 4s; }
+
+/* MOTION */
 
 @keyframes float {
-  from { transform: translate(0,0); }
-  to { transform: translate(80px,-60px); }
-}
-
-@keyframes slowMove {
-  from { transform: translate(0,0); }
-  to { transform: translate(-60px,40px); }
+  from { transform: translateY(0); }
+  to { transform: translateY(-60px); }
 }
 
 </style>
