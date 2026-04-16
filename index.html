@@ -155,14 +155,7 @@ body {
   <div class="content">
 
     <!-- NAV -->
-    <div class="nav">
-      <div class="logo">Sanika Porwal</div>
-      <div class="nav-links">
-        <a href="#">About</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Contact</a>
-      </div>
-    </div>
+  
 
     <!-- HERO TEXT -->
     <h1 class="title">Sanika Porwal</h1>
@@ -177,6 +170,10 @@ body {
     </div>
 
     <div class="cta">↓ Explore Work</div>
+    <div class="cta-buttons">
+  <a href="#">View Portfolio</a>
+  <a href="#">Contact Me</a>
+</div>
 
   </div>
 
@@ -186,6 +183,27 @@ body {
     <div class="card"><h3>Portfolio</h3></div>
     <div class="card"><h3>Contact</h3></div>
   </div>
+  .cta-buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.cta-buttons a {
+  text-decoration: none;
+  font-size: 14px;
+  padding: 12px 26px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  transition: 0.3s;
+}
+
+.cta-buttons a:hover {
+  border-color: #c8a96a;
+  color: #c8a96a;
+  box-shadow: 0 0 20px rgba(200,169,106,0.2);
+}
 
 </section>
 
