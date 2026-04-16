@@ -65,26 +65,29 @@ body {
 .card {
   position: relative;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 14px;
   cursor: pointer;
+  background: #000;
 }
 
-.card img {
+/* VIDEO */
+.card video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: 0.5s;
 }
 
-/* HOVER EFFECT */
-.card:hover img {
-  transform: scale(1.08);
+/* HOVER ZOOM */
+.card:hover video {
+  transform: scale(1.1);
 }
 
+/* OVERLAY */
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
   opacity: 0;
   transition: 0.4s;
   display: flex;
@@ -98,6 +101,7 @@ body {
 
 .overlay h3 {
   font-family: 'Playfair Display', serif;
+  font-size: 18px;
 }
 
 /* RESPONSIVE */
@@ -124,25 +128,28 @@ body {
 <!-- HEADER -->
 <div class="header">
   <h1>Portfolio</h1>
-  <p>Selected works & cinematic AI projects</p>
+  <p>Cinematic AI Films & Visual Experiences</p>
 </div>
 
 <!-- GRID -->
 <div class="grid">
 
+  <!-- VIDEO 1 -->
   <div class="card">
-    <img src="images/project1.jpg">
+    <video src="videos/video1.mp4" autoplay muted loop playsinline></video>
     <div class="overlay"><h3>AI Cinematic Reel</h3></div>
   </div>
 
+  <!-- VIDEO 2 -->
   <div class="card">
-    <img src="images/project2.jpg">
+    <video src="videos/video2.mp4" autoplay muted loop playsinline></video>
     <div class="overlay"><h3>Luxury Brand Ad</h3></div>
   </div>
 
+  <!-- VIDEO 3 -->
   <div class="card">
-    <img src="images/project3.jpg">
-    <div class="overlay"><h3>Myth + AI Fusion</h3></div>
+    <video src="videos/video3.mp4" autoplay muted loop playsinline></video>
+    <div class="overlay"><h3>Myth x AI Visual</h3></div>
   </div>
 
 </div>
