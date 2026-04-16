@@ -17,19 +17,18 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  color: #fff;
   background: #0b0f14;
-  overflow-x: hidden;
+  color: #fff;
 }
 
-/* 🔥 BACKGROUND */
+/* HERO SECTION */
 .hero {
   height: 100vh;
-  background: url('imagesai-bg.jpg.png')no-repeat center center/cover;
+ background: url('imagesai-bg.jpg.png') no-repeat center center/cover;
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 /* DARK OVERLAY */
@@ -39,30 +38,34 @@ body {
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(5, 8, 12, 0.9) 35%,
-    rgba(5, 8, 12, 0.3) 70%
+    rgba(5, 8, 12, 0.95) 35%,
+    rgba(5, 8, 12, 0.4) 70%
   );
 }
 
-/* CONTENT LAYER */
+/* CONTENT */
 .content {
   position: relative;
   z-index: 2;
   padding: 60px 80px;
+  max-width: 700px;
 }
 
 /* NAVBAR */
 .nav {
+  position: absolute;
+  top: 30px;
+  left: 80px;
+  right: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 100px;
+  z-index: 3;
 }
 
 .logo {
   font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  letter-spacing: 1px;
+  font-size: 18px;
 }
 
 .nav-links {
@@ -72,7 +75,7 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: #ddd;
+  color: #ccc;
   font-size: 14px;
   transition: 0.3s;
 }
@@ -81,7 +84,7 @@ body {
   color: #c8a96a;
 }
 
-/* HERO TEXT */
+/* TEXT */
 .title {
   font-family: 'Playfair Display', serif;
   font-size: 64px;
@@ -97,93 +100,17 @@ body {
 .desc {
   font-size: 14px;
   color: #9ca3af;
-  max-width: 500px;
   line-height: 1.6;
 }
 
 .cta {
   margin-top: 40px;
-  font-size: 14px;
   color: #c8a96a;
-  cursor: pointer;
+  font-size: 14px;
 }
 
 /* BUTTONS */
-.buttons {
-  display: flex;
-  gap: 30px;
-  padding: 40px 80px;
-  position: relative;
-  z-index: 2;
-}
-
-.card {
-  flex: 1;
-  padding: 30px;
-  border-radius: 12px;
-  backdrop-filter: blur(12px);
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  text-align: center;
-  transition: 0.4s;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(200,169,106,0.6);
-  box-shadow: 0 0 30px rgba(200,169,106,0.2);
-}
-
-.card h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
-}
-
-/* RESPONSIVE */
-@media(max-width: 900px){
-  .title { font-size: 42px; }
-  .content { padding: 40px; }
-  .buttons { flex-direction: column; }
-}
-</style>
-</head>
-
-<body>
-
-<section class="hero">
-
-  <div class="content">
-
-    <!-- NAV -->
-  
-
-    <!-- HERO TEXT -->
-    <h1 class="title">Sanika Porwal</h1>
-
-    <div class="subtitle">
-      AI Cinematic Visual Director & Video Editor
-    </div>
-
-    <div class="desc">
-      Crafting luxury campaigns & immersive digital stories<br>
-      Inspired by modern creativity and futuristic technology
-    </div>
-
-    <div class="cta">↓ Explore Work</div>
-    <div class="cta-buttons">
-  <a href="#">View Portfolio</a>
-  <a href="#">Contact Me</a>
-</div>
-
-  </div>
-
-  <!-- BUTTONS -->
-  <div class="buttons">
-    <div class="card"><h3>About</h3></div>
-    <div class="card"><h3>Portfolio</h3></div>
-    <div class="card"><h3>Contact</h3></div>
-  </div>
-  .cta-buttons {
+.cta-buttons {
   margin-top: 30px;
   display: flex;
   gap: 20px;
@@ -204,6 +131,52 @@ body {
   color: #c8a96a;
   box-shadow: 0 0 20px rgba(200,169,106,0.2);
 }
+
+/* RESPONSIVE */
+@media(max-width: 900px){
+  .title { font-size: 42px; }
+  .content { padding: 40px; }
+  .nav { left: 40px; right: 40px; }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+  <!-- NAVBAR -->
+  <div class="nav">
+    <div class="logo">Sanika Porwal</div>
+    <div class="nav-links">
+      <a href="#">About</a>
+      <a href="#">Portfolio</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <h1 class="title">Sanika Porwal</h1>
+
+    <div class="subtitle">
+      AI Cinematic Visual Director & Video Editor
+    </div>
+
+    <div class="desc">
+      Crafting luxury campaigns & immersive digital stories<br>
+      Inspired by modern creativity and futuristic technology
+    </div>
+
+    <div class="cta">↓ Explore Work</div>
+
+    <div class="cta-buttons">
+      <a href="#">View Portfolio</a>
+      <a href="#">Contact Me</a>
+    </div>
+
+  </div>
 
 </section>
 
