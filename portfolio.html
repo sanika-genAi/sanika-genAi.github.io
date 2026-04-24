@@ -134,25 +134,35 @@ body {
 <!-- GRID -->
 <div class="grid">
 
-  <!-- VIDEO 1 -->
-  <div class="card">
-    <video src="videos/video1.mp4" autoplay muted loop playsinline></video>
-    <div class="overlay"><h3>AI Cinematic Reel</h3></div>
-  </div>
+<div class="grid">
 
-  <!-- VIDEO 2 -->
-  <div class="card">
-    <video src="videos/video2.mp4" autoplay muted loop playsinline></video>
-    <div class="overlay"><h3>Luxury Brand Ad</h3></div>
-  </div>
-
-  <!-- VIDEO 3 -->
-  <div class="card">
-    <video src="videos/video3.mp4" autoplay muted loop playsinline></video>
-    <div class="overlay"><h3>Myth x AI Visual</h3></div>
+ <div class="card" onclick="openVideo('https://www.youtube.com/embed/T9DLeBu5N_s')">
+  <img src="images/thumb1.jpg">
+  <div class="overlay"><h3>AI Cinematic Reel</h3></div>
+</div>
+  <div class="card" onclick="openVideo('https://www.youtube.com/embed/VIDEO2')">
+    <img src="images/thumb2.jpg">
+    <div class="overlay"><h3>Luxury AI Ad</h3></div>
   </div>
 
 </div>
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeVideo()">&times;</span>
+    <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
 
+<script>
+function openVideo(url){
+  document.getElementById("videoModal").style.display = "flex";
+  document.getElementById("videoFrame").src = url + "?autoplay=1";
+}
+
+function closeVideo(){
+  document.getElementById("videoModal").style.display = "none";
+  document.getElementById("videoFrame").src = "";
+}
+</script>
 </body>
 </html>
